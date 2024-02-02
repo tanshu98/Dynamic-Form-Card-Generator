@@ -3,12 +3,19 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-/* .container{
+body{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    /* flex-direction: column; */
     flex-wrap: wrap;
-} */
+}
 
 form {
     display: flex;
@@ -74,3 +81,42 @@ button {
     margin: 10px;
     padding-top: 5px;
 }
+
+.modal-content{
+    position: relative;
+    background-color:cornflowerblue;
+    height: 300px;
+    width: 300px;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+}
+#modal-input {
+    border: none;
+    padding: 10px;
+    background-color: transparent;
+    outline: none;
+}
+#modal-btn{
+    width: 35%;
+    padding: 10px;
+    color: black;
+}
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
