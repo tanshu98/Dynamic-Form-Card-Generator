@@ -46,7 +46,10 @@ const generateCards = function () {
     card.setAttribute("backgroundColor", "red");
     // card.setAttribute("h4", "Heading-4");
     card.innerHTML = `Card ${i + 1}`;
-    // card.innerHTML = ``;
+
+    let paraCard = document.createElement('p', '');
+    paraCard.style.margin = '10px';
+    card.appendChild(paraCard);
     card.style.cursor = 'pointer';
     cardContainerID.appendChild(card);
   }
@@ -55,7 +58,7 @@ const generateCards = function () {
 
 
 cardContainer.addEventListener('click', function(e) {
-  console.log(e.target.innerHTML);
+  console.log(e.target.childNodes[1]);
   console.log(e);
 
   // Create ModalContent on click - 
@@ -103,7 +106,7 @@ cardContainer.addEventListener('click', function(e) {
 
     // Storing the modal submitted data in the resp card
 
-    e.target.innerHTML = dataObj.data;
+    e.target.childNodes[1].innerHTML = dataObj.data;
   modalContent.style.display = 'none';
 
   })

@@ -87,7 +87,7 @@ button {
     background-color:cornflowerblue;
     height: 300px;
     width: 300px;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     text-align: center;
     display: none;
