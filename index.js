@@ -45,8 +45,8 @@ const generateCards = function () {
     card.setAttribute("id", `id-${i}`);
     card.setAttribute("backgroundColor", "red");
     // card.setAttribute("h4", "Heading-4");
-    // card.innerHTML = `Card ${i + 1}`;
-    card.innerHTML = `<h4>Card-${i+1}</h4>`;
+    card.innerHTML = `Card ${i + 1}`;
+    // card.innerHTML = ``;
     card.style.cursor = 'pointer';
     cardContainerID.appendChild(card);
   }
@@ -54,8 +54,8 @@ const generateCards = function () {
 };
 
 
-cardForm.addEventListener('click', function(e) {
-  console.log(e.target.id);
+cardContainer.addEventListener('click', function(e) {
+  console.log(e.target.innerHTML);
   console.log(e);
 
   // Create ModalContent on click - 
@@ -87,10 +87,10 @@ cardForm.addEventListener('click', function(e) {
 
   let dataObj = {
     id: e.target.id,
-    data: ''
+    data: ""
   };
 
-  // Logic for adding data in the Modal Card
+  // Logic for Storing data in the Modal Card after submit button
 
   console.log(dataObj);
 
@@ -99,9 +99,11 @@ cardForm.addEventListener('click', function(e) {
     dataObj.data = inputContent.value;
     console.log('dataObj', dataObj);
 
-    // Storing the data in local storage
-    
-    localStorage.setItem = dataObj;
+    // Storing the modal submitted data in the resp card
+
+    e.target.innerHTML = dataObj.data;
+  modalContent.style.display = 'none';
+
   })
   modalContent.style.display = 'flex';
 })
