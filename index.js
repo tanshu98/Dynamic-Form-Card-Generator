@@ -94,6 +94,8 @@ cardContainer.addEventListener('click', function(e) {
 
   console.log(dataObj);
 
+
+  // Store data in an object when user clicks on submit button
   submitButton.addEventListener('click', function() {
     console.log('clicked inside submit button');
     dataObj.data = inputContent.value;
@@ -105,10 +107,10 @@ cardContainer.addEventListener('click', function(e) {
   modalContent.style.display = 'none';
 
   })
-  modalContent.style.display = 'flex';
-})
 
-// Close the modal - 
-closeModal.addEventListener('click', function() {
+  spanContent.addEventListener('click', function() {
   modalContent.style.display = 'none';
+  })
+
+  modalContent.style.display = 'flex';
 })
